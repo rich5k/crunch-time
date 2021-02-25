@@ -51,7 +51,7 @@
 	<!-- Dashboard -->
     <div class="container dashbaord">
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-9">
                 <h1><strong>Your Dashboard</strong> </h1>
                 <div class="row">
                     <div class="col-lg-11">
@@ -135,7 +135,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-3">
             <div class="row">
                     <div class="col-lg-8">
                         <h4>Project News</h4>
@@ -143,6 +143,61 @@
                     </div>
                     <div class="col-lg-4">
                         <h4><i class="fa fa-long-arrow-right" aria-hidden="true"></i></h4>
+                    </div>
+
+                    <div class="container wboard jumbotron">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h4><strong>3 Step Project Tips</strong> </h4>
+
+                            </div>
+                            <div class="col-lg-4">
+                                Date posted
+                            </div>
+                        </div>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Recusandae sit quis maiores asperiores iure accusantium 
+                            ...more
+                        </p>
+                    </div>
+                    <div class="container wboard jumbotron">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h4><strong>How To Improve Value</strong> </h4>
+
+                            </div>
+                            <div class="col-lg-4">
+                                Date posted
+                            </div>
+                        </div>
+                        <div class="dIcon">
+                            
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Recusandae sit quis maiores asperiores iure accusantium 
+                            ...more
+                        </p>
+                    </div>
+                    <div class="container wboard jumbotron">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h4><strong>Capital Funders</strong> </h4>
+
+                            </div>
+                            <div class="col-lg-4">
+                                Date posted
+                            </div>
+                        </div>
+                    
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Recusandae sit quis maiores asperiores iure accusantium 
+                            ...more
+                        </p>
                     </div>
                 </div>
                 
