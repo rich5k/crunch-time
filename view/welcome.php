@@ -62,32 +62,44 @@
 
     <div class="container wboard jumbotron">
         <h4><strong>Project Details</strong> </h4>
-		<form id = "contact_us">
-			<label for ="Name" id = "name_label">Project Name</label>
+		<form id = "project_details">
+			<label for ="pName" id = "name_label">Project Name <span style="color: red;">*</span> </label>
 			<br>
-			<input type="text" id="full_name" name="fll_name">
+			<input type="text" class="form-control" id="pName" name="pName" placeholder="Give us the name of your project" required>
 			<br>
 			<br>
 			<br>
 			
 			
-			<label for ="Email" id = "mail_label">Industry</label>
+			<label for ="industry" id = "indusry_label">Industry <span style="color: red;">*</span></label>
 			<br>
-			<input type = "email" id = "email" name = "email">
+			<select class="form-control" id="industry" placeholder="Select the industry your project serves" required>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
 			
 			<br>
 			<br>
 			<br>
-			<label for = "message" id = "msg_label">Project Description</label>
+			<label for = "pDescription" id = "description_label">Project Description <span style="color: red;">*</span></label>
 			<br>
 			
-			<textarea id = "msg" name = "msg_label" rows="4" cols="50"></textarea>
+			<textarea id = "pDesription" class="form-control" name = "pDescription" rows="1" cols="50" placeholder="Give us the problem your project solves and the solution" required></textarea>
 			<br>
+            <input type="checkbox" id="checkOngoing" required>
+            <label class="form-check-label" for="checkOngoing">This project is currently ongoing <span style="color: red;">*</span> </label>
 			<br>
-			<button class="btn btn-primary" type="button" id="button-addon2">Submit</button>
-		</form>
-    </div>
+        </div>
+        
+        <div class="container">
+            <button class="btn btn-light" type="button" id="goback" disabled>Go Back</button>
+            <button class="btn btn-dark" type="button" id="continue">Continue</button>
+        </form>
 
+        </div>
 	<br>
 	
 	
