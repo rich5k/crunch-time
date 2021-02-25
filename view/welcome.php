@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="contact_us.css">
+    <title>Add A Project</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/welcome.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -23,52 +23,23 @@
 		    
 			<ul class="navbar-nav my-2 my-lg-0 ml-auto">
                 <li class="nav-item active" >
-		            <a class="nav-link" href="dashboard.php">Dashboard
-				
+		            <a class="nav-link" href="dashboard.php">Dashboard</a>
 		        </li>
                 <li class="nav-item " >
-		            <a class="nav-link" href="pArchives.php">Project Archives
-				
+		            <a class="nav-link" href="pArchives.php">Project Archives</a>
 		        </li>
                 <li class="nav-item" >
-		            <a class="nav-link" href="assistant.php">Assistant
-				
+		            <a class="nav-link" href="assistant.php">Assistant</a>
 		        </li>
                 <li class="nav-item" >
-		            <a class="nav-link" href="pTracker.php">Project Tracker
-				
+		            <a class="nav-link" href="pTracker.php">Project Tracker</a>
 		        </li>
                 <li class="nav-item" >
-		            <a class="nav-link" href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i>
-				
+		            <a class="nav-link" href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
 		        </li>
 		      
 
-			  <li class="nav-item" style="color: white">
-		        
-				<!-- checks to see if someone has signed in as a seller -->
-				<?php
-					if(isset($_SESSION['sessionFname1'])&&isset($_SESSION['sessionLname1'])){
-						printf('Welcome, %s %s :)', $_SESSION['sessionFname1'], $_SESSION['sessionLname1']);
-						echo <<<_SIGNOUTITEM
-							<a id="sign-in" class="nav-link" href="logout.php">
-								SIGN OUT 
-							<i class="fa fa-sign-out" aria-hidden="true"></i></a>
-						
-						_SIGNOUTITEM;
-
-					}else{
-						
-						echo <<<_SELLSIGNINITEM
-						<a id="sign-in" class="nav-link" href="sell_sign_in.php">
-							SELLER SIGN IN
-						<i class="fa fa-user-circle" aria-hidden="true"></i></a>
-
-						_SELLSIGNINITEM;
-					}
-				?>
-
-		      </li>
+			  
 			</ul>
 			</div>
 
@@ -77,16 +48,22 @@
     <br>
     
 	
-	<!-- contact us form -->
-    <div class="container">
-        <h2>CONTACT US</h2>
+	<!-- Welcome Board -->
+    <div class="container wboard jumbotron">
+        <h2><strong>Welcome Aboard!</strong></h2>
 
-        <p >Kindly email us with any questions, complaints, inquires or donations, you would like to make or call +2338941602.
-        We would be happy to entertain all your questions and give you the best of service.
-		</p>
-		
+        <p >Tell us a few things about your projects</p>
+        <br>
+        <hr>
+        <p>
+           <span id= 'dprogress'>Details</span> <span id='cprogress'>Cashflows</span> 
+        </p>
+    </div>	
+
+    <div class="container wboard jumbotron">
+        <h4><strong>Project Details</strong> </h4>
 		<form id = "contact_us">
-			<label for ="Name" id = "name_label">Name</label>
+			<label for ="Name" id = "name_label">Project Name</label>
 			<br>
 			<input type="text" id="full_name" name="fll_name">
 			<br>
@@ -94,14 +71,14 @@
 			<br>
 			
 			
-			<label for ="Email" id = "mail_label">Email</label>
+			<label for ="Email" id = "mail_label">Industry</label>
 			<br>
 			<input type = "email" id = "email" name = "email">
 			
 			<br>
 			<br>
 			<br>
-			<label for = "message" id = "msg_label">Message</label>
+			<label for = "message" id = "msg_label">Project Description</label>
 			<br>
 			
 			<textarea id = "msg" name = "msg_label" rows="4" cols="50"></textarea>
