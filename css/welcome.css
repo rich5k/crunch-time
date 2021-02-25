@@ -4,6 +4,22 @@
     background-color: white;
     color: #0E76A8;
   }
+  .dashboard {
+    margin-top: 75px;
+    
+  }
+  .dTwin{
+    text-align: center;
+    color: #0E76A8;  
+    /* flex-direction: column; */
+  }
+  .dIcon{
+      background-color: #C8D7EB;
+      padding-bottom: 200px;
+  }
+  .cbalance{
+    padding-bottom: 50px;
+  }
   /* h2{
     text-align: center;
     padding-top: 40px;
@@ -13,7 +29,7 @@
 
 body{
     background-color: rgb(219, 219, 219);
-    margin-top: 50px;
+    margin-top: 85px;
 }
 
 #cprogress{
@@ -24,4 +40,8 @@ hr{
 }
 #continue{
     margin-right: 50%;
+}
+
+.cash{
+    color: #62B16F;
 }
