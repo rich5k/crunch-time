@@ -4,9 +4,22 @@
     background-color: white;
     color: #0E76A8;
   }
+.phistory{
+    background-color: white;
+    color: #0E76A8;
+}
   .dashboard {
     margin-top: 75px;
     
+  }
+  .date{
+      color: #94A3B8;
+  }
+  .justText{
+      color: #24364D;
+  }
+  .outflow{
+      color: red;
   }
   .dTwin{
     text-align: center;
