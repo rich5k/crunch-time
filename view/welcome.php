@@ -54,10 +54,29 @@
 
         <p >Tell us a few things about your projects</p>
         <br>
-        <hr>
-        <p>
-           <span id= 'dprogress'>Details</span> <span id='cprogress'>Cashflows</span> 
-        </p>
+        <div class="row">
+            <div class="col-sm-1">
+                <i class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
+            
+            </div>
+            <div class="col-sm-10">
+                <hr>
+            
+            </div>
+            <div class="col-sm-1">
+                <i class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
+            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-11">
+                <span id= 'dprogress'>Details</span> 
+            
+            </div>
+            <div class="col-sm-1">
+                <span id='cprogress'>Cashflows</span> 
+            </div>
+        </div>
     </div>	
 
     <div class="container wboard jumbotron">
