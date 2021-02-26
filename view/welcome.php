@@ -95,8 +95,16 @@
         </div>
         
         <div class="container">
-            <button class="btn btn-light" type="button" id="goback" disabled>Go Back</button>
-            <button class="btn btn-dark" type="button" id="continue">Continue</button>
+		<div class="row">
+                <div class="col-lg-11">
+                    <button class="btn btn-light" type="button" id="goback" disabled>Go Back</button>
+                
+                </div>
+                <div class="col-lg-1">
+                    <button class="btn btn-dark" type="button" id="continue">Continue</button>
+                
+                </div>
+            </div>
         </form>
 
         </div>
