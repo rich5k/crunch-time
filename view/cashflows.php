@@ -52,7 +52,7 @@
     <div class="container wboard jumbotron">
         <h2><strong>Enter your project cash flows</strong></h2>
 
-        <p >Tell us about how money comes in and out of your busuiness</p>
+        <p >Tell us about how money comes in and out of your business</p>
         <br>
         <hr>
         <p>

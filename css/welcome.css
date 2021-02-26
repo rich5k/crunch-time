@@ -48,9 +48,14 @@ body{
 #cprogress{
     text-align: end;
 }
-hr{
-    font-weight: 400;
-}
+hr { 
+  position: relative; 
+  top: 20px; 
+  border: none; 
+  height: 12px; 
+  background: #0E76A8; 
+  margin-bottom: 50px; 
+} 
 #continue{
     margin-right: 50%;
 }
