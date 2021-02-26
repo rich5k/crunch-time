@@ -2,23 +2,23 @@ create database if not exists crunch;
 
 use crunch;
 
-create table if not exists User1
+create table if not exists projects
 (
-userID int not null primary key auto_increment,
+projectID int not null primary key auto_increment,
 projectName varchar(255) not null,
-Industry varchar(255) not null,
+industry varchar(255) not null,
 pDescription text(65535) not null,
 totalInflow float(5,2) not null,
 totalOutflow float(5,2) not null
 );
 
 
-create table if not exists Project_Duration 
+create table if not exists project_duration 
 (
-projectID int not null primary key auto_increment, 
+projDurationID int not null primary key auto_increment, 
 startTime datetime not null,
 endTime datetime not null,
-FOREIGN KEY ( ProjectID ) REFERENCES User1(userID) ON DELETE CASCADE
+FOREIGN KEY ( projDurationID ) REFERENCES projects(projectID) ON DELETE CASCADE
 );
 
 
