@@ -23,19 +23,19 @@
 		    
 			<ul class="navbar-nav my-2 my-lg-0 ml-auto">
                 <li class="nav-item active" >
-		            <a class="nav-link" href="dashboard.php">Dashboard</a>
+		            <a class="nav-link" href="./view/dashboard.php">Dashboard</a>
 		        </li>
                 <li class="nav-item " >
-		            <a class="nav-link" href="pArchives.php">Project Archives</a>
+		            <a class="nav-link" href="./view/pArchives.php">Project Archives</a>
 		        </li>
                 <li class="nav-item" >
-		            <a class="nav-link" href="assistant.php">Assistant</a>
+		            <a class="nav-link" href="#">Assistant</a>
 		        </li>
                 <li class="nav-item" >
-		            <a class="nav-link" href="pTracker.php">Project Tracker</a>
+		            <a class="nav-link" href="#">Project Tracker</a>
 		        </li>
                 <li class="nav-item" >
-		            <a class="nav-link" href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+		            <a class="nav-link" href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>
 		        </li>
 		      
 
