@@ -5,9 +5,9 @@ use crunch;
 create table if not exists User1
 (
 userID int not null primary key auto_increment,
-projectName varchar(10) not null,
-Industry varchar(10) not null,
-pDescription varchar(10) not null,
+projectName varchar(255) not null,
+Industry varchar(255) not null,
+pDescription text(65535) not null,
 totalInflow float(5,2) not null,
 totalOutflow float(5,2) not null
 );

@@ -93,11 +93,16 @@
 			<label for ="industry" id = "indusry_label">Industry <span style="color: red;">*</span></label>
 			<br>
 			<select class="form-control" id="industry" placeholder="Select the industry your project serves" required>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>Banking</option>
+                <option>Tourism</option>
+                <option>Pharmaceutial</option>
+                <option>Automobile</option>
+                <option>Textile</option>
+				<option>Oil and Gas</option>
+				<option>Fishing</option>
+				<option>Mining</option>
+				<option>Telecommunication</option>
+				<option>Music</option>
             </select>
 			
 			<br>

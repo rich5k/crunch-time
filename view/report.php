@@ -166,7 +166,20 @@
     </div>
 	<br>
 	
-	
+	<div class="container">
+            <div class="row">
+                <div class="col-lg-11">
+                    
+                
+                </div>
+                <div class="col-lg-1">
+                    <button class="btn btn-dark" type="button" id="save">Save</button>
+                
+                </div>
+            </div>
+       
+
+        </div>
 
 	
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
