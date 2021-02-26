@@ -77,8 +77,7 @@
                 <span id='cprogress'>Cashflows</span> 
             </div>
         </div>
-        <p>
-        </p>
+        
     </div>	
 
     <div class="container">

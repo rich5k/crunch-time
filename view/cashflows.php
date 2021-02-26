@@ -64,7 +64,7 @@
             
             </div>
             <div class="col-sm-1">
-                <i class="fa fa-check-circle fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-circle-o fa-2x" aria-hidden="true"></i>
             
             </div>
         </div>
