@@ -1,0 +1,13 @@
+Formulae of project
+
+For Duration, D = ( From Project_Duration (End - Start) )
+
+Y = (TotalCash_inflow * D ) - ( TotalCash_outflow * D)
+
+1. Needed Capital = TotalCash_outflow * 3
+
+2. Payback Period = Needed Capital / Y = X years
+
+3. Net Present Value = Y / ( 1 + 0.02 ) ^ D
+
+4. Profitability index = Net Present Value / Needed Capital
