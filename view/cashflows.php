@@ -121,7 +121,7 @@
 			<br>
             <div class="row">
                 <div class="col-lg-8">
-                    <label for ="income" id = "income_label">Income <span style="color: red;">*</span> </label>
+                    <label for ="income" id = "income_label">Total Income <span style="color: red;">*</span> </label>
                     <br>
                     <input type="text" class="form-control" id="income" name="income" placeholder="Describe one means your project will make money" required>
                 
@@ -141,7 +141,7 @@
 			<br>
             <div class="row">
                 <div class="col-lg-8">
-                    <label for ="costs" id = "costs_label">Costs<span style="color: red;">*</span> </label>
+                    <label for ="costs" id = "costs_label">Total Cost<span style="color: red;">*</span> </label>
                     <br>
                     <input type="text" class="form-control" id="costs" name="costs" placeholder="Describe one means your project will spend money" required>
                 

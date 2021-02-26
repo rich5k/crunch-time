@@ -4,20 +4,21 @@ use crunch;
 
 create table if not exists User1
 (
-ID char(277) not null,
-Name varchar(10) not null,
+userID int not null primary key auto_increment,
+projectName varchar(10) not null,
 Industry varchar(10) not null,
-Description varchar(10),
-TotalCash_inflow char(5),
-TotalCash_outflow char(5),
-PRIMARY KEY (Name, ID);
-)
+pDescription varchar(10) not null,
+totalInflow float(5,2) not null,
+totalOutflow float(5,2) not null
+);
 
 
 create table if not exists Project_Duration 
 (
-Project_ID varchar(10) not null, 
-Start DATETIME DEFAULT (getdate()),
-End DATETIME DEFAULT (getdate()),
-FOREIGN KEY ( Project_ID ) REFERENCES User1(ID) ON DELETE CASCADE
+projectID int not null primary key auto_increment, 
+startTime datetime not null,
+endTime datetime not null,
+FOREIGN KEY ( ProjectID ) REFERENCES User1(userID) ON DELETE CASCADE
 );
+
+
