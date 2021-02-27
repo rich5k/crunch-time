@@ -72,3 +72,32 @@ Link to the prototype of the project can be found on figma via the link
 
 https://www.figma.com/proto/qiQAkQ303Uxc8baXamUb7z/Project-Value-Copy?node-id=459%3A5&scaling=contain
 
+
+
+>> Research and user feedback
+
+Research question
+
+Predicting project value and knowing if it's profitable or worth undertaking before resources are committed
+
+our solution, a project valuation application
+
+
+Research methodology (who you spoke with and how, the number of people, etc)
+
+We used online survey (Yesu and Nanan) getting X replies since our target users for the app will need to be tech savy anyway and do not have time for one on one interviews 
+
+- Top 3 key findings from interviews
+
+1. The system should provide basic features for free but also offer extended services which allows for detailed graphs and projections for extensive users.
+2. The system should provide security of user information so no one steels the details or ideas of others
+3. The system should be fast without putting a significant stress on pc resources. 
+
+
+After the testing, we got feedback on adapting it to enable users to keep track of the project as it is on going as well and not only in the predicting phase, giving them a means by which they can compare physical values to projections and track growth
+
+
+- How the research has changed (focused) their problem i.e. what will you be designing for.
+Research has given us 
+
+The research has shown as that very few people have experience with such services or applications, so we should focus on a simple yet easily understandable implement which automates as work as possible
