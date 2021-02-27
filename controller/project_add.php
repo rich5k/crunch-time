@@ -38,17 +38,21 @@ if(isset($_POST['continue'])){
         "endTime"=> $eDate
     ];
 
-    if($project->addProject($projectData)){
-        if($project->addProjectDuration($projectDurationData)){
-            echo "<script> alert('This project has been added') </script>";
-            echo "<script>window.location= '../view/report.php'</script>";
+    // if($project->addProject($projectData)){
+    //     if($project->addProjectDuration($projectDurationData)){
+    //         echo "<script> alert('This project has been added') </script>";
+    //         echo "<script>window.location= '../view/report.php'</script>";
 
-        }
-    }
-    else{
-        echo 'sql error4';
-        exit();
-    }
+    //     }
+    // }
+    // else{
+    //     echo 'sql error4';
+    //     exit();
+    // }
+
+    $capital= $project->getNeededCapital($pName);
+    echo "<br>";
+    echo "Capital: ". $capital;
 }
 
 ?>
