@@ -1,3 +1,8 @@
+<?php
+require_once '../controller/database.php';
+require_once '../models/Project.php';
+require_once '../models/Database.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +72,19 @@
                         <div class="container cbalance wboard jumbotron">
                             <h4><strong>Current Net Balance</strong></h4>
                             <br>
-                            <h2 class="cash"><strong>$26,300.00</strong></h2>
+                            <?php
+                                 // Instantiate project
+                                $project= new Project();
+                                $totalNBalance=0.00;
+                                $projects= $project->getProjects();
+                                foreach($projects as $p){
+                                    $netBalance= $p->totalInflow - $p->totalOutflow;
+                                    $totalNBalance= $totalNBalance+ $netBalance; 
+                                }
+                                echo '<h2 class="cash"><strong>$'.sprintf("%.2f",$totalNBalance).'</strong></h2>'
+
+                            ?>
+                            
                             <br>
                             <br>
                             <button onclick="location.href = './welcome.php';" class="btn btn-dark" type="button" id="addProject">Add Project</button>
