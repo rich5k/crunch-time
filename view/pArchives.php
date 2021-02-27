@@ -90,7 +90,7 @@
                                 
                             </div>
                             <div class="col-lg-6 cash">
-                                <button class="btn btn-dark" type="button" id="addProject">Add Project</button>
+                                <button onclick="location.href = './welcome.php';" class="btn btn-dark" type="button" id="addProject">Add Project</button>
                                 
                             </div>
                         </div>

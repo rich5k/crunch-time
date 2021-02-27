@@ -70,7 +70,7 @@
                             <h2 class="cash"><strong>$26,300.00</strong></h2>
                             <br>
                             <br>
-                            <button class="btn btn-dark" type="button" id="addProject">Add Project</button>
+                            <button onclick="location.href = './welcome.php';" class="btn btn-dark" type="button" id="addProject">Add Project</button>
                         </div>	
 
                     </div>

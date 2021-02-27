@@ -173,7 +173,7 @@
                 
                 </div>
                 <div class="col-lg-1">
-                    <button class="btn btn-dark" type="button" id="save">Save</button>
+                    <button onclick="location.href = './dashboard.php';" class="btn btn-dark" type="button" id="save">Save</button>
                 
                 </div>
             </div>
