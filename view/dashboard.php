@@ -104,34 +104,47 @@ require_once '../models/Database.php';
                                 </div>
                             </div>
                             <br>
-                            <div class="row">
-                                <div class="col-lg-3 date">
-                                    3/01/20
-                                </div>
-                                <div class="col-lg-3">
-                                    <h6><strong>Contract System</strong></h6>
-                                </div>
-                                <div class="col-lg-3 cash">
-                                    Profit
-                                </div>
-                                <div class="col-lg-3 cash">
-                                    $300.00
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-3 date">
-                                    2/02/20
-                                </div>
-                                <div class="col-lg-3">
-                                    <h6><strong>Online Payment</strong></h6>
-                                </div>
-                                <div class="col-lg-3 cash">
-                                    Profit
-                                </div>
-                                <div class="col-lg-3 cash">
-                                    $1,000.00
-                                </div>
-                            </div>
+                            <?php
+                         // Instantiate project
+                        $project= new Project();
+                        // $totalNBalance=0.00;
+                        $projects= $project->getProjects();
+                        foreach($projects as $p){
+                            echo '<div class="row">';
+                            echo '  <div class="col-lg-3 date">';
+                            $pDuration= $project->getProjectDuration($p->projectID);
+                            echo $pDuration->startTime;
+                            echo '  </div>';
+                            echo '  <div class="col-lg-3 justText">';
+                            echo '      <h6><strong>'.$p->projectName.'</strong></h6>';
+                            echo '  </div>';
+                            if($p->totalInflow > $p->totalOutflow){
+                                echo '  <div class="col-lg-3 cash">';
+                                echo '      Profit';
+                                echo '  </div>';
+                                echo '  <div class="col-lg-3 cash">';
+                                $netBalance= $p->totalInflow - $p->totalOutflow;
+                                echo '$'.$netBalance;
+                                echo '  </div>';
+                                echo '</div>';
+                                echo '<br>';
+
+                            }
+                            else{
+                                echo '  <div class="col-lg-3 outflow">';
+                                echo '      Loss';
+                                echo '  </div>';
+                                echo '  <div class="col-lg-3 outflow">';
+                                $netBalance= $p->totalInflow - $p->totalOutflow;
+                                echo '(-)$'.$netBalance;
+                                echo '  </div>';
+                                echo '</div>';
+                                echo '<br>';
+                            }
+                        }
+                                // echo '<h2 class="cash"><strong>$'.sprintf("%.2f",$totalNBalance).'</strong></h2>'
+
+                    ?>
                         </div>
                     </div>
                 </div>
