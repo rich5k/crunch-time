@@ -70,7 +70,7 @@
         }
 
         //gets projectDurationID
-        public function getPProjectDuration($projID){
+        public function getProjectDuration($projID){
             //Prepare Query
             $this->db->query('select * from project_duration where projDuration='.$projID);
 

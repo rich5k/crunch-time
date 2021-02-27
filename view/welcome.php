@@ -81,7 +81,7 @@
 
     <div class="container wboard jumbotron">
         <h4><strong>Project Details</strong> </h4>
-		<form id = "project_details">
+		<form id = "project_details" action="#" method="POST" onsubmit="saveData()">
 			<label for ="pName" id = "name_label">Project Name <span style="color: red;">*</span> </label>
 			<br>
 			<input type="text" class="form-control" id="pName" name="pName" placeholder="Give us the name of your project" required>
@@ -111,13 +111,26 @@
 			<label for = "pDescription" id = "description_label">Project Description <span style="color: red;">*</span></label>
 			<br>
 			
-			<textarea id = "pDesription" class="form-control" name = "pDescription" rows="1" cols="50" placeholder="Give us the problem your project solves and the solution" required></textarea>
+			<textarea id = "pDescription" class="form-control" name = "pDescription" rows="1" cols="50" placeholder="Give us the problem your project solves and the solution" required></textarea>
 			<br>
             <input type="checkbox" id="checkOngoing" required>
             <label class="form-check-label" for="checkOngoing">This project is currently ongoing <span style="color: red;">*</span> </label>
+        <script>
+            function saveData() {
+                
+                var pName = document.getElementById("pName").value;
+                var industry = document.getElementById("industry").value;
+                var pDesc = document.getElementById("pDescription").value;
+                // alert(pName);
+                localStorage.setItem("pName", pName);
+                localStorage.setItem("industry", industry);
+                localStorage.setItem("pDesc", pDesc);
+                // alert(localStorage.getItem("pName"));
+                
+            }
+        </script>
 			<br>
         </div>
-        
         <div class="container">
 		<div class="row">
                 <div class="col-lg-11">
@@ -125,7 +138,7 @@
                 
                 </div>
                 <div class="col-lg-1">
-                    <button class="btn btn-dark" type="button" id="continue">Continue</button>
+                    <button class="btn btn-dark" type="submit" id="continue">Continue</button>
                 
                 </div>
             </div>

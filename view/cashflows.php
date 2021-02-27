@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Cashflows</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/welcome.css">
+    <script src="../js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -81,38 +84,33 @@
 
     <div class="container wboard jumbotron">
         <h4><strong>Project Inputs</strong> </h4>
-		<form id = "project_inputs">
+		<form id = "project_inputs" action="../controller/project_add.php" method="POST" onsubmit="addData()">
 			<div class="row">
                 <div class="col-lg-4">
-                
-                    <label for ="sDate" id = "sDate_label">Start Date <span style="color: red;">*</span></label>
+                    <input type=hidden id="pName1" name="pName1" value="none"/>
+                    <input type=hidden id="industry1" name="industry1" value="none"/>
+                    <input type=hidden id="pDescription1" name="pDescription1" value="none"/>
+                    <!-- input field to pick from date -->
+                    <label for ="from_date" id = "from_date_label">Start Date <span style="color: red;">*</span></label>
                     <br>
-                    <select class="form-control" id="sDate" placeholder="27/11/2020" required>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <input type="text" name="from_date" id="from_date" class="form-control" placeholder="Start Date">
+                    <span id= "fdateError" class="text-danger font-weight-bold"></span>
                     
                 </div>
                 <div class="col-lg-4">
-                    <label for ="eDate" id = "eDate_label">End Date <span style="color: red;">*</span></label>
+                   <!-- input field to pick to date -->
+                   <label for ="to_date" id = "to_date_label">End Date <span style="color: red;">*</span></label>
                     <br>
-                    <select class="form-control" id="eDate" placeholder="01/10/2021" required>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <input type="text" name="to_date" id="to_date" class="form-control" placeholder="End Date">
+                    <span id= "fdateError" class="text-danger font-weight-bold"></span>
+                    
                 
                 </div>
                 <div class="col-lg-4">
                     <br>
                     <br>
-                    <input type="checkbox" id="checkUnknown" required>
-                    <label class="form-check-label" for="checkUnknown">End Date Unknown or Indefinite <span style="color: red;">*</span> </label>
+                    <input type="checkbox" id="checkUnknown" >
+                    <label class="form-check-label" for="checkUnknown">End Date Unknown or Indefinite  </label>
                     <br>
                 
                 </div>
@@ -121,57 +119,25 @@
 			<br>
             <div class="row">
                 <div class="col-lg-8">
-                    <label for ="income" id = "income_label">Total Income <span style="color: red;">*</span> </label>
+                    <label for ="income" id = "income_label">Total Income ($)<span style="color: red;">*</span> </label>
                     <br>
-                    <input type="text" class="form-control" id="income" name="income" placeholder="Describe one means your project will make money" required>
+                    <input type="text" class="form-control" id="income" name="income" placeholder="State Amount" required>
                 
                 </div>
-                <div class="col-lg-2">
-                    <label for ="amount" id = "amount_label">Amount ($) <span style="color: red;">*</span> </label>
-                    <br>
-                    <input type="text" class="form-control" id="amount" name="amount1" placeholder="State amount" required>
-                    <br>
                 
-                </div>
-                <div class="col-lg-2">
-                <br>
-                <button class="btn btn-secondary" type="button" id="add1">+</button>
-                </div>
             </div>
 			<br>
             <div class="row">
                 <div class="col-lg-8">
-                    <label for ="costs" id = "costs_label">Total Cost<span style="color: red;">*</span> </label>
+                    <label for ="costs" id = "costs_label">Total Cost($)<span style="color: red;">*</span> </label>
                     <br>
-                    <input type="text" class="form-control" id="costs" name="costs" placeholder="Describe one means your project will spend money" required>
+                    <input type="text" class="form-control" id="costs" name="costs" placeholder="State Amount" required>
                 
                 </div>
-                <div class="col-lg-2">
-                    <label for ="amount2" id = "amount_label2">Amount ($) <span style="color: red;">*</span> </label>
-                    <br>
-                    <input type="text" class="form-control" id="amount2" name="amount2" placeholder="State amount" required>
-                    <br>
                 
-                </div>
-                <div class="col-lg-2">
-                <br>
-                <button class="btn btn-secondary" type="button" id="add2">+</button>
-                </div>
             </div>
 			<br>
-            <div class="row">
-                <div class="col-lg-1">
-                    <div class="justText"><i class="fa fa-question-circle-o" aria-hidden="true"></i></div>
-                </div>
-                <div class="col-lg-9">
-                    <p class="justText">Use the plus button to add additional income/costs!</p>
-                
-                </div>
-                <div class="col-lg-2">
-                
-                <button class="btn btn-secondary" type="button" id="usd">USD</button>
-                </div>
-            </div>
+            
 			<br>
 			
         </div>
@@ -183,7 +149,7 @@
                 
                 </div>
                 <div class="col-lg-1">
-                    <button class="btn btn-dark" type="button" id="continue">Continue</button>
+                    <button class="btn btn-dark" type="submit" id="continue" name="continue">Continue</button>
                 
                 </div>
             </div>
@@ -192,10 +158,35 @@
         </div>
 	<br>
 	
+    <script>
+        function addData() {
+                
+            var pName = document.getElementById("pName1");
+            var industry = document.getElementById("industry1");
+            var pDesc = document.getElementById("pDescription1");
+                // alert(pName);
+            pName.value=localStorage.getItem("pName");
+            industry.value=localStorage.getItem("industry");
+            pDesc.value=localStorage.getItem("pDesc");
+                // alert(localStorage.getItem("pName
+                
+        }
+        $(document).ready(function(){
+            $.datepicker.setDefaults({
+                dateFormat: 'yy-mm-dd'
+            });
+            //displays calender for both inputs
+            $(function(){
+                $("#from_date").datepicker();
+                $("#to_date").datepicker();
+            });
+            
+        });
+        </script>
 	
 
 	
-	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 </body>
 </html>
