@@ -8,7 +8,7 @@
         }
 
         //adds projects
-        public function addProduct($data){
+        public function addProject($data){
             //Prepare Query
             $this->db->query('insert into projects(projectName, industry, pDescription, totalInflow, totalOutflow) values(:projectName, :industry, :pDescription, :totalInflow, :totalOutflow)');
 
@@ -24,6 +24,13 @@
             }else{
                 return false;
             }
+        }
+
+        //gets last inserted project
+        public function getLastProjectID(){
+            
+            return $this->db->lastInsertId();
+            
         }
 
         //gets projects
