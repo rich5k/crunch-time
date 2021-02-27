@@ -79,11 +79,11 @@
         //gets projectDurationID
         public function getProjectDuration($projID){
             //Prepare Query
-            $this->db->query('select * from project_duration where projDuration='.$projID);
+            $this->db->query('select * from project_duration where projDurationID='.$projID);
 
                      
             //Fetch All records
-            $results=$this->db->resultset();
+            $results=$this->db->single();
             return $results;
             
         }
