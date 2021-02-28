@@ -69,7 +69,7 @@
             Let's help you know the value of your project in two easy steps...click the button to start
         </p>
         <br>
-        <button class="btn btn-dark" type="button" id="getStarted" style="border-radius: 20px;">Get Started</button>
+        <button onclick="location.href = './view/welcome.php';" class="btn btn-dark" type="button" id="getStarted" style="border-radius: 20px;">Get Started</button>
         <hr>
         
     </div>	

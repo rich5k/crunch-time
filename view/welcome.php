@@ -81,7 +81,7 @@
 
     <div class="container wboard jumbotron">
         <h4><strong>Project Details</strong> </h4>
-		<form id = "project_details" action="#" method="POST" onsubmit="saveData()">
+		<form id = "project_details" action="./cashflows.php" method="POST" onsubmit="saveData()">
 			<label for ="pName" id = "name_label">Project Name <span style="color: red;">*</span> </label>
 			<br>
 			<input type="text" class="form-control" id="pName" name="pName" placeholder="Give us the name of your project" required>
@@ -138,7 +138,7 @@
                 
                 </div>
                 <div class="col-lg-1">
-                    <button class="btn btn-dark" type="submit" id="continue">Continue</button>
+                    <button  class="btn btn-dark" type="submit" id="continue">Continue</button>
                 
                 </div>
             </div>

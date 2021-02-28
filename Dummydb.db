@@ -16,8 +16,9 @@ totalOutflow float(5,2) not null
 create table if not exists project_duration 
 (
 projDurationID int not null primary key auto_increment, 
-startTime datetime not null,
-endTime datetime not null,
+startTime date not null,
+endTime date not null,
+duration int not null,
 FOREIGN KEY ( projDurationID ) REFERENCES projects(projectID) ON DELETE CASCADE
 );
 

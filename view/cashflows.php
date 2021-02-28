@@ -119,6 +119,15 @@
 			<br>
             <div class="row">
                 <div class="col-lg-8">
+                    <label for ="pDuration" id = "pDuration_label">Project Duration (months) <span style="color: red;">*</span> </label>
+                    <br>
+                    <input type="text" class="form-control" id="pDuration" name="pDuration" placeholder="State project duration" required>
+                
+                </div>
+            </div>
+                <br>
+            <div class="row">
+                <div class="col-lg-8">
                     <label for ="income" id = "income_label">Total Income ($)<span style="color: red;">*</span> </label>
                     <br>
                     <input type="text" class="form-control" id="income" name="income" placeholder="State Amount" required>
@@ -145,11 +154,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-11">
-                    <button class="btn btn-light" type="button" id="goback" disabled>Go Back</button>
+                    <button onclick="location.href = './welcome.php';" class="btn btn-light" type="button" id="goback" >Go Back</button>
                 
                 </div>
                 <div class="col-lg-1">
-                    <button class="btn btn-dark" type="submit" id="continue" name="continue">Continue</button>
+                    <button onclick="location.href = './report.php';" class="btn btn-dark" type="submit" id="continue" name="continue">Continue</button>
                 
                 </div>
             </div>

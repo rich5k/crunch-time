@@ -11,7 +11,7 @@ if(isset($_POST['continue'])){
     $eDate=$_POST['to_date'];
     $income=$_POST['income'];
     $cost=$_POST['costs'];
-
+    $pDuration=$_POST['pDuration'];
     echo $pName."<br>";
     echo $industry;
     echo $pDesc;
@@ -19,6 +19,7 @@ if(isset($_POST['continue'])){
     echo $eDate;
     echo $income;
     echo $cost;
+    echo $pDuration;
 
      // Instantiate project
      $project= new Project();
@@ -35,24 +36,23 @@ if(isset($_POST['continue'])){
     // Project_Duration Data
     $projectDurationData= [
         "startTime"=> $sDate,
-        "endTime"=> $eDate
+        "endTime"=> $eDate,
+        "pDuration"=>$pDuration
     ];
 
-    // if($project->addProject($projectData)){
-    //     if($project->addProjectDuration($projectDurationData)){
-    //         echo "<script> alert('This project has been added') </script>";
-    //         echo "<script>window.location= '../view/report.php'</script>";
+    if($project->addProject($projectData)){
+        if($project->addProjectDuration($projectDurationData)){
+            echo "<script> alert('This project has been added') </script>";
+            echo "<script>window.location= '../view/report.php'</script>";
 
-    //     }
-    // }
-    // else{
-    //     echo 'sql error4';
-    //     exit();
-    // }
+        }
+    }
+    else{
+        echo 'sql error4';
+        exit();
+    }
 
-    $capital= $project->getNeededCapital($pName);
-    echo "<br>";
-    echo "Capital: ". $capital;
+   
 }
 
 ?>
