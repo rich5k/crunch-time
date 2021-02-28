@@ -30,6 +30,10 @@
       background-color: #C8D7EB;
       padding-bottom: 200px;
   }
+  img{
+    height: auto;
+    width: auto;
+  }
   .cbalance{
     padding-bottom: 50px;
   }
@@ -62,4 +66,8 @@ hr {
 
 .cash{
     color: #62B16F;
+}
+
+#homeimg{
+  max-width: 100%;
 }

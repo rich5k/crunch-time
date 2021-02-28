@@ -27,9 +27,14 @@
         }
 
         //gets last inserted project
-        public function getLastProjectID(){
-            
-            return $this->db->lastInsertId();
+        public function getLastProjectID($pName){
+            //Prepare Query
+            $this->db->query('select projectID from projects where projectName="'.$pName.'"');
+
+                     
+            //Fetch All records
+            $results=$this->db->resultset();
+            return $results;
             
         }
 
@@ -83,7 +88,7 @@
 
                      
             //Fetch All records
-            $results=$this->db->single();
+            $results=$this->db->resultset();
             return $results;
             
         }

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if(isset($_POST['continue'])){
     require_once '../controller/database.php';
     require_once '../models/Project.php';
@@ -21,6 +21,7 @@ if(isset($_POST['continue'])){
     echo $cost."<br>";
     echo $pDuration."<br>";
 
+    $_SESSION['projName']=$pName;
      // Instantiate project
      $project= new Project();
 

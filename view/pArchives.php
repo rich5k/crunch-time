@@ -187,7 +187,10 @@ require_once '../models/Database.php';
                             echo '<div class="row">';
                             echo '  <div class="col-lg-3 date">';
                             $pDuration= $project->getProjectDuration($p->projectID);
-                            echo $pDuration->startTime;
+                            foreach($pDuration as $pd){
+                                echo $pd->startTime;
+
+                            }
                             echo '  </div>';
                             echo '  <div class="col-lg-3 justText">';
                             echo '      <h6><strong>'.$p->projectName.'</strong></h6>';

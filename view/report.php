@@ -2,6 +2,7 @@
 require_once '../controller/database.php';
 require_once '../models/Project.php';
 require_once '../models/Database.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -116,9 +117,17 @@ require_once '../models/Database.php';
                                  // Instantiate project
                                 $project= new Project();
                                 $needCapital=0.00;
-                                $cProjectNum= $project->getLastProjectID;
+                                // echo $project->getLastProjectID();
+                                $projs=$project->getLastProjectID($_SESSION['projName']);
+                                foreach($projs as $p){
+                                    $cProjectNum= $p->projectID;
+
+                                }
+                                // $cProjectNum= $project->getLastProjectID($_SESSION['projName']);
+                                // echo $cProjectNum;
                                 $projects= $project->getSomeProjects($cProjectNum);
                                 foreach($projects as $p){
+                                    // echo $p->totalOutflow;
                                     $needCapital= $p->totalOutflow * 3;
                                      
                                 }
@@ -142,23 +151,27 @@ require_once '../models/Database.php';
                                  // Instantiate project
                                 $project= new Project();
                                 $pDuration=0;
-                                $cProjectNum= $project->getLastProjectID;
+                                $projs=$project->getLastProjectID($_SESSION['projName']);
+                                foreach($projs as $p){
+                                    $cProjectNum= $p->projectID;
+
+                                }
                                 $projects= $project->getProjectDuration($cProjectNum);
                                 $tInflow= 0.00;
                                 $tOutflow= 0.00;
                                 $projects1= $project->getProjects($cProjectNum);
-                                foreach($projects as $proj){
+                                foreach($projects1 as $proj){
                                     $tInflow= $proj->totalInflow;
                                     $tOutflow= $proj-> totalOutflow;
                                 }
                                 foreach($projects as $p){
                                     $years= $p->duration / 12;
-                                    $diff= ($tInflow * years)- ($tOutflow * years);
+                                    $diff= ($tInflow * $years)- ($tOutflow * $years);
                                     $needCapital= $tOutflow * 3;
-                                    $pDuration= $needCapital / $years;
+                                    $pDuration= $needCapital / $diff;
                                      
                                 }
-                                echo $pDuration." years";
+                                echo sprintf("%.2f",$pDuration)." years";
 
                             ?>
                         </div>
@@ -178,18 +191,22 @@ require_once '../models/Database.php';
                                  // Instantiate project
                                 $project= new Project();
                                 $nPresentValue=0.00;
-                                $cProjectNum= $project->getLastProjectID;
+                                $projs=$project->getLastProjectID($_SESSION['projName']);
+                                foreach($projs as $p){
+                                    $cProjectNum= $p->projectID;
+
+                                }
                                 $projects= $project->getProjectDuration($cProjectNum);
                                 $tInflow= 0.00;
                                 $tOutflow= 0.00;
                                 $projects1= $project->getProjects($cProjectNum);
-                                foreach($projects as $proj){
+                                foreach($projects1 as $proj){
                                     $tInflow= $proj->totalInflow;
                                     $tOutflow= $proj-> totalOutflow;
                                 }
                                 foreach($projects as $p){
                                     $years= $p->duration / 12;
-                                    $diff= ($tInflow * years)- ($tOutflow * years);
+                                    $diff= ($tInflow * $years)- ($tOutflow * $years);
                                     $nPresentValue= $diff / pow((1+ 0.02),$years);
                                      
                                 }
@@ -215,18 +232,22 @@ require_once '../models/Database.php';
                                 $nPresentValue=0.00;
                                 $profitIndex=0.00;
                                 $needCapital=0.00;
-                                $cProjectNum= $project->getLastProjectID;
+                                $projs=$project->getLastProjectID($_SESSION['projName']);
+                                foreach($projs as $p){
+                                    $cProjectNum= $p->projectID;
+
+                                }
                                 $projects= $project->getProjectDuration($cProjectNum);
                                 $tInflow= 0.00;
                                 $tOutflow= 0.00;
                                 $projects1= $project->getProjects($cProjectNum);
-                                foreach($projects as $proj){
+                                foreach($projects1 as $proj){
                                     $tInflow= $proj->totalInflow;
                                     $tOutflow= $proj-> totalOutflow;
                                 }
                                 foreach($projects as $p){
                                     $years= $p->duration / 12;
-                                    $diff= ($tInflow * years)- ($tOutflow * years);
+                                    $diff= ($tInflow * $years)- ($tOutflow * $years);
                                     $nPresentValue= $diff / pow((1+ 0.02),$years);
                                     $needCapital= $tOutflow * 3;
                                     $profitIndex= $nPresentValue / $needCapital;
@@ -246,23 +267,27 @@ require_once '../models/Database.php';
                     $nPresentValue=0.00;
                     $profitIndex=0.00;
                     $needCapital=0.00;
-                    $cProjectNum= $project->getLastProjectID;
+                    $projs=$project->getLastProjectID($_SESSION['projName']);
+                    foreach($projs as $p){
+                        $cProjectNum= $p->projectID;
+
+                    }
                     $projects= $project->getProjectDuration($cProjectNum);
                     $tInflow= 0.00;
                     $tOutflow= 0.00;
                     $projects1= $project->getProjects($cProjectNum);
-                    foreach($projects as $proj){
+                    foreach($projects1 as $proj){
                         $tInflow= $proj->totalInflow;
                         $tOutflow= $proj-> totalOutflow;
                     }
                     foreach($projects as $p){
                         $years= $p->duration / 12;
-                        $diff= ($tInflow * years)- ($tOutflow * years);
+                        $diff= ($tInflow * $years)- ($tOutflow * $years);
                         $nPresentValue= $diff / pow((1+ 0.02),$years);
                         $needCapital= $tOutflow * 3;
                         $profitIndex= $nPresentValue / $needCapital;
                     }
-                    echo sprintf("%.2f",$profitIndex);
+                    // echo sprintf("%.2f",$profitIndex);
 
                     if ($profitIndex>1){
                         echo '<div class="col-lg-4" style="background-color: #62B16F; color: white; margin-top: 75px;">';
@@ -274,7 +299,7 @@ require_once '../models/Database.php';
                         echo "</div>";
                     }
                     else{
-                        echo '<div class="col-lg-4" style="background-color: #red; color: white; margin-top: 75px;">';
+                        echo '<div class="col-lg-4" style="background-color: red; color: white; margin-top: 75px;">';
                         echo "<br><br>";
                         echo "<strong>Status: Not Profitable</strong>";
                         echo "<p>";
