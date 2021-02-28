@@ -13,13 +13,13 @@ if(isset($_POST['continue'])){
     $cost=$_POST['costs'];
     $pDuration=$_POST['pDuration'];
     echo $pName."<br>";
-    echo $industry;
-    echo $pDesc;
-    echo $sDate;
-    echo $eDate;
-    echo $income;
-    echo $cost;
-    echo $pDuration;
+    echo $industry."<br>";
+    echo $pDesc."<br>";
+    echo $sDate."<br>";
+    echo $eDate."<br>";
+    echo $income."<br>";
+    echo $cost."<br>";
+    echo $pDuration."<br>";
 
      // Instantiate project
      $project= new Project();
@@ -37,7 +37,7 @@ if(isset($_POST['continue'])){
     $projectDurationData= [
         "startTime"=> $sDate,
         "endTime"=> $eDate,
-        "pDuration"=>$pDuration
+        "duration"=>$pDuration
     ];
 
     if($project->addProject($projectData)){

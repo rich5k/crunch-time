@@ -1,3 +1,8 @@
+<?php
+require_once '../controller/database.php';
+require_once '../models/Project.php';
+require_once '../models/Database.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +112,19 @@
                             </p>
                         </div>
                         <div class="col-lg-2 justText">
-                            $0.00
+                        <?php
+                                 // Instantiate project
+                                $project= new Project();
+                                $needCapital=0.00;
+                                $cProjectNum= $project->getLastProjectID;
+                                $projects= $project->getSomeProjects($cProjectNum);
+                                foreach($projects as $p){
+                                    $needCapital= $p->totalOutflow * 3;
+                                     
+                                }
+                                echo '$'.sprintf("%.2f",$needCapital);
+
+                            ?>
                         </div>
                     </div>
                     <br>
@@ -120,7 +137,30 @@
                             </p>
                         </div>
                         <div class="col-lg-2 justText">
-                            2 Years
+                            
+                            <?php
+                                 // Instantiate project
+                                $project= new Project();
+                                $pDuration=0;
+                                $cProjectNum= $project->getLastProjectID;
+                                $projects= $project->getProjectDuration($cProjectNum);
+                                $tInflow= 0.00;
+                                $tOutflow= 0.00;
+                                $projects1= $project->getProjects($cProjectNum);
+                                foreach($projects as $proj){
+                                    $tInflow= $proj->totalInflow;
+                                    $tOutflow= $proj-> totalOutflow;
+                                }
+                                foreach($projects as $p){
+                                    $years= $p->duration / 12;
+                                    $diff= ($tInflow * years)- ($tOutflow * years);
+                                    $needCapital= $tOutflow * 3;
+                                    $pDuration= $needCapital / $years;
+                                     
+                                }
+                                echo $pDuration." years";
+
+                            ?>
                         </div>
                     </div>
                     <br>
@@ -133,7 +173,29 @@
                             </p>
                         </div>
                         <div class="col-lg-2 justText">
-                            $319,754
+                            
+                            <?php
+                                 // Instantiate project
+                                $project= new Project();
+                                $nPresentValue=0.00;
+                                $cProjectNum= $project->getLastProjectID;
+                                $projects= $project->getProjectDuration($cProjectNum);
+                                $tInflow= 0.00;
+                                $tOutflow= 0.00;
+                                $projects1= $project->getProjects($cProjectNum);
+                                foreach($projects as $proj){
+                                    $tInflow= $proj->totalInflow;
+                                    $tOutflow= $proj-> totalOutflow;
+                                }
+                                foreach($projects as $p){
+                                    $years= $p->duration / 12;
+                                    $diff= ($tInflow * years)- ($tOutflow * years);
+                                    $nPresentValue= $diff / pow((1+ 0.02),$years);
+                                     
+                                }
+                                echo '$'.sprintf("%.2f",$nPresentValue);
+
+                            ?>
                         </div>
                     </div>
                     <br>
@@ -146,21 +208,89 @@
                             </p>
                         </div>
                         <div class="col-lg-2 justText">
-                            1.2
+                            
+                            <?php
+                                 // Instantiate project
+                                $project= new Project();
+                                $nPresentValue=0.00;
+                                $profitIndex=0.00;
+                                $needCapital=0.00;
+                                $cProjectNum= $project->getLastProjectID;
+                                $projects= $project->getProjectDuration($cProjectNum);
+                                $tInflow= 0.00;
+                                $tOutflow= 0.00;
+                                $projects1= $project->getProjects($cProjectNum);
+                                foreach($projects as $proj){
+                                    $tInflow= $proj->totalInflow;
+                                    $tOutflow= $proj-> totalOutflow;
+                                }
+                                foreach($projects as $p){
+                                    $years= $p->duration / 12;
+                                    $diff= ($tInflow * years)- ($tOutflow * years);
+                                    $nPresentValue= $diff / pow((1+ 0.02),$years);
+                                    $needCapital= $tOutflow * 3;
+                                    $profitIndex= $nPresentValue / $needCapital;
+                                }
+                                echo sprintf("%.2f",$profitIndex);
+
+                            ?>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
             </div>
-                <div class="col-lg-4" style="background-color: #62B16F; color: white; margin-top: 75px;">
-                    <br><br>
-                    <strong>Status: Profitable</strong>
+                <?php
+                    // Instantiate project
+                    $project= new Project();
+                    $nPresentValue=0.00;
+                    $profitIndex=0.00;
+                    $needCapital=0.00;
+                    $cProjectNum= $project->getLastProjectID;
+                    $projects= $project->getProjectDuration($cProjectNum);
+                    $tInflow= 0.00;
+                    $tOutflow= 0.00;
+                    $projects1= $project->getProjects($cProjectNum);
+                    foreach($projects as $proj){
+                        $tInflow= $proj->totalInflow;
+                        $tOutflow= $proj-> totalOutflow;
+                    }
+                    foreach($projects as $p){
+                        $years= $p->duration / 12;
+                        $diff= ($tInflow * years)- ($tOutflow * years);
+                        $nPresentValue= $diff / pow((1+ 0.02),$years);
+                        $needCapital= $tOutflow * 3;
+                        $profitIndex= $nPresentValue / $needCapital;
+                    }
+                    echo sprintf("%.2f",$profitIndex);
 
-                    <p>
-                        After calculating the inputs given, we recommend that you proceed with your project as it is deemed profitable
-                    </p>
-                </div>
+                    if ($profitIndex>1){
+                        echo '<div class="col-lg-4" style="background-color: #62B16F; color: white; margin-top: 75px;">';
+                        echo "<br><br>";
+                        echo "<strong>Status: Profitable</strong>";
+                        echo "<p>";
+                        echo "After calculating the inputs given, we recommend that you proceed with your project as it is deemed profitable";
+                        echo "</p>";
+                        echo "</div>";
+                    }
+                    else{
+                        echo '<div class="col-lg-4" style="background-color: #red; color: white; margin-top: 75px;">';
+                        echo "<br><br>";
+                        echo "<strong>Status: Not Profitable</strong>";
+                        echo "<p>";
+                        echo "After calculating the inputs given, we recommend that you do not proceed with your project as it is deemed unprofitable";
+                        echo "</p>";
+                        echo "</div>";
+                    }
+                ?>
+                
+                    
+                    
+
+                    
+                        
+                    
+                
         </div>
     
     </div>
