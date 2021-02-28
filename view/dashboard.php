@@ -213,46 +213,7 @@ require_once '../models/Database.php';
                                 
                             
                         
-                        
-                        
-                            
-                    <!-- <div class="container wboard jumbotron">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h4><strong>How To Improve Value</strong> </h4>
-
-                            </div>
-                            <div class="col-lg-4">
-                                Date posted
-                            </div>
-                        </div>
-                        
-                            
-                        
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Recusandae sit quis maiores asperiores iure accusantium 
-                            ...more
-                        </p>
-                    </div>
-                    <div class="container wboard jumbotron">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <h4><strong>Capital Funders</strong> </h4>
-
-                            </div>
-                            <div class="col-lg-4">
-                                Date posted
-                            </div>
-                        </div>
-                    
-                        <br>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Recusandae sit quis maiores asperiores iure accusantium 
-                            ...more
-                        </p>
-                    </div> -->
+                       
                 </div>
                 
             </div>
@@ -265,7 +226,10 @@ require_once '../models/Database.php';
                     </div>
                     <div class="col-lg-4">
                         <h4><i class="fa fa-long-arrow-right" aria-hidden="true"></i></h4>
-                    </div>
+                    </div>-->
+
+
+                    <!-- Fetches data from Google News API -->
                     <?php
                         $url= 'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=8e566599e1ca42a89d5a87a9c99dcc2e';
                         $response= file_get_contents($url);

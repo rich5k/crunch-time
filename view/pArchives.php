@@ -53,7 +53,7 @@ require_once '../models/Database.php';
     <br>
     
 	
-	<!-- Dashboard -->
+	<!-- Project Archives-->
     <div class="container dashbaord">
         <h1 style="color: #0E76A8;"><strong>Project Archives</strong> </h1>
         <div class="row">
