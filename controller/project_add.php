@@ -12,14 +12,14 @@ if(isset($_POST['continue'])){
     $income=$_POST['income'];
     $cost=$_POST['costs'];
     $pDuration=$_POST['pDuration'];
-    echo $pName."<br>";
-    echo $industry."<br>";
-    echo $pDesc."<br>";
-    echo $sDate."<br>";
-    echo $eDate."<br>";
-    echo $income."<br>";
-    echo $cost."<br>";
-    echo $pDuration."<br>";
+    // echo $pName."<br>";
+    // echo $industry."<br>";
+    // echo $pDesc."<br>";
+    // echo $sDate."<br>";
+    // echo $eDate."<br>";
+    // echo $income."<br>";
+    // echo $cost."<br>";
+    // echo $pDuration."<br>";
 
     $_SESSION['projName']=$pName;
      // Instantiate project
